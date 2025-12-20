@@ -1,0 +1,22 @@
+Acoompaniment Application
+Libraries: Music21
+
+User iput:
+- Root Note(String)
+- BPM(Float/Int)
+
+Generate:
+Chord(Note Array)
+
+
+
+NOTES ON CONFIG:
+Python v3.11
+Music21 v9.10
+
+pip install music21
+MIDI Configuration Necessary
+- setup FluidSynth
+    - requires soundfonts and shit that may need to be loaded by the user in the environment
+    -for now just generates midi files
+
