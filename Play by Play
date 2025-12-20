@@ -29,7 +29,10 @@ Add more Accompaniment Patterns
 Make sure the scales can work for diminished, augmented, etc.
 
 -add function for multiple chordsssss
-
+-add function for how long the chord stays arpeggiating dependent
+on the time signature, tempo, and how many chords are needed per measure
+-possibly important to play chord blocks if there is not enough time
+to play every arpeggiation
 NOTES ON CONFIG:
 Python v3.11
 Music21 v9.10
