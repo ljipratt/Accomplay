@@ -4,20 +4,21 @@
 
 from music21 import *
 #Define root of note as a string
-root_note_name = 'C4'
+
+root_note_name = input("Enter root note name: ")
 #Create a music21 Note object for the root note
 root_note = note.Note(root_note_name)
 print(f"Root Note Name: {root_note_name}")
 print(f"Music21 Root Note Object: {root_note}")
 
 #Define the scale type(major, minor, possibly add dorian and mixolydian)
-scale_type = ('major')
+scale_type = input("Enter Scale type(major/minor")
 
 #Create a music21 Scale object based on the root note and scale type
 if scale_type == 'major':
     accompaniment_scale = scale.MajorScale(root_note)
 elif scale_type == 'minor':
-        scale.MinorScale(root_note)
+    accompaniment_scale =  scale.MinorScale(root_note)
 else:
     print(f"Unsupported scale type: {scale_type}. Defaulting to Major.")
     accompaniment_scale = scale.MajorScale(root_note)
@@ -40,6 +41,7 @@ print(f"Tempo (BPM): {tempo_bpm}")
 print(f"Default Duration (music21): {default_duration}")
 
 
+
 #============PLAYING AUDIO=============
 
 #Create an empty stream
@@ -51,9 +53,6 @@ for p in accompaniment_scale.pitches:
     n.quarterLength = 0.5 #Give each note a quarter note duration for playing
     s.append(n)
 
-#Display the stream (this will often generate a midi file and/or player
-s.show('midi')
-print("Attempted to play the scale. If a player does not appear, check file directory.")
 
 # Save the stream to a MIDI file
 midi_file_path = 'my_scale.mid'
@@ -63,3 +62,46 @@ print(f"Scale saved to {midi_file_path}. You can download this file and play it 
 
 
 
+#=====================CHORD SCALES==========================
+#Get pitches for the root, third, fifth, and seventh degrees from the tonic from acccompaniment scale
+
+#use .pitch to get the raw pitch object
+root_pitch = root_note.pitch
+
+# Get the chord tones in the root's octave
+pitches_root_octave = {
+    accompaniment_scale.pitchFromDegree(1, root_pitch),  #Root
+    accompaniment_scale.pitchFromDegree(3, root_pitch), #third
+    accompaniment_scale.pitchFromDegree(5, root_pitch), #fifth
+    accompaniment_scale.pitchFromDegree(7, root_pitch) #seventh
+}
+
+# Generate pitches for one octave lower and one octave higher
+pitches_lower_octave = [p.transpose('-P8') for p in pitches_root_octave]
+pitches_higher_octave = [p.transpose('P8') for p in pitches_root_octave]
+
+#Combine all pitches and sort them to ensure ascending order
+#chord_scale_pitches = sorted([*pitches_lower_octave, *pitches_root_octave, *pitches_higher_octave])
+ascending_chord_scale_pitches = sorted([*pitches_lower_octave, *pitches_root_octave, *pitches_higher_octave])
+descending_chord_scale_pitches = list(reversed(ascending_chord_scale_pitches[:-1]))
+chord_scale_pitches = ascending_chord_scale_pitches + descending_chord_scale_pitches
+
+
+
+#combine all pitches and sort them to ensure ascending order
+print(f"Chord Scale Pitches ({scale_type} 7th, 3 octaves): {[str(p) for p in chord_scale_pitches]}")
+
+#=======print test==========
+
+s_chord_scale = stream.Stream()
+
+#add each pitch from the chord scale to the stream
+for p in chord_scale_pitches:
+    n = note.Note(p)
+    n.quarterLength = 0.5
+    s_chord_scale.append(n)
+
+#Save the stream to a MIDI file
+chord_scale_midi_file_path = 'Chord_Scale.mid'
+s_chord_scale.write('midi', fp=chord_scale_midi_file_path)
+print(f"Saved chord scale to {chord_scale_midi_file_path}")

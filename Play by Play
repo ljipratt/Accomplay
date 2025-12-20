@@ -6,9 +6,12 @@ User iput:
 - BPM(Float/Int)
 
 Generate:
-Chord(Note Array)
+- Chord(Note Array)
+- ChordScale
+    -Composed of only notes from the first, third, fifth, and seventh notes of the scale
 
-
+TODO:
+- Separate Classes lololololololol
 
 NOTES ON CONFIG:
 Python v3.11
@@ -20,3 +23,8 @@ MIDI Configuration Necessary
     - requires soundfonts and shit that may need to be loaded by the user in the environment
     -for now just generates midi files
 
+
+Change Notes:
+
+12.20.2025
+- Added Chord Scales, ascends and decends, left chord definition commented.
