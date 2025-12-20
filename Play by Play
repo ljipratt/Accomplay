@@ -3,22 +3,39 @@ Libraries: Music21
 
 User iput:
 - Root Note(String)
+- Major/Minor
 - BPM(Float/Int)
 
 Generate:
 - Chord(Note Array)
 - ChordScale
     -Composed of only notes from the first, third, fifth, and seventh notes of the scale
-
+- sooo theres a ton of variables, will make a map of them all soon.
 TODO:
-- Separate Classes lololololololol
+
+Separate Classes lololololololol
+
+Add Time signature
+- tonic low octave hits on every downbeat(for pattern 1)
+
+Add more Accompaniment Patterns
+-look into inversions if needed
+—accompaniment pattern 1:
+- One octave down from the tonic, one octave up from tonic, hits every note on the chordscale up and down arpeggiated
+- Tonic hits a double octave in the baseline on every four beats
+-Possibly a metronome
+
+
+Make sure the scales can work for diminished, augmented, etc.
+
+-add function for multiple chordsssss
 
 NOTES ON CONFIG:
 Python v3.11
 Music21 v9.10
 
 pip install music21
-MIDI Configuration Necessary
+MIDI Configuration 
 - setup FluidSynth
     - requires soundfonts and shit that may need to be loaded by the user in the environment
     -for now just generates midi files
