@@ -41,13 +41,3 @@ MIDI Configuration
     - requires soundfonts and shit that may need to be loaded by the user in the environment
     -for now just generates midi files
 
-
-Change Notes:
-12.21.2025(Liam)
--Added class for MusicGenerator
--That's all
-
-
-
-12.20.2025
-- Added Chord Scales, ascends and decends, left chord definition commented.
