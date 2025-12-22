@@ -45,6 +45,10 @@ MIDI Configuration
 
 
 Change Notes:
+12.21.2025
+-Added class for MusicGenerator
+-That's all
+
 
 12.20.2025
 - Added Chord Scales, ascends and decends, left chord definition commented.
