@@ -13,7 +13,7 @@ Generate:
 - sooo theres a ton of variables, will make a map of them all soon.
 TODO:
 
-Add Time signature
+
 - tonic low octave hits on every downbeat(for pattern 1)
 
 Add more Accompaniment Patterns
@@ -21,16 +21,14 @@ Add more Accompaniment Patterns
 —accompaniment pattern 1:
 - One octave down from the tonic, one octave up from tonic, hits every note on the chordscale up and down arpeggiated
 - Tonic hits a double octave in the baseline on every four beats
--Possibly a metronome
+
 
 
 Make sure the scales can work for diminished, augmented, etc.
-
--add function for multiple chordsssss
--add function for how long the chord stays arpeggiating dependent
-on the time signature, tempo, and how many chords are needed per measure
 -possibly important to play chord blocks if there is not enough time
 to play every arpeggiation
+
+
 NOTES ON CONFIG:
 Python v3.11
 Music21 v9.10
