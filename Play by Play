@@ -11,7 +11,67 @@ Generate:
 - ChordScale
     -Composed of only notes from the first, third, fifth, and seventh notes of the scale
 - sooo theres a ton of variables, will make a map of them all soon.
+
+
+General Ideas to be fleshed out:
+
+GUI
+-Sheet Music Display
+-Keyboard Display
+
+
+
+Variables to add:
+
+
+
+
+
+
+BeatIndex
+-FirstBeat(number)
+-LastBeat(number)
+-BeatDuration(number)
+
+MusicSheet
+-list of measures
+
+Measures:
+-list of notes
+-returns measure number
+
+getTime
+- describes what beat we are on
+describes what measure we are on
+-
+-increments every
+
+- all Chords need to have a beatIndex Range
+-->Describes coordinates for music location
+-->Measures also have beat duration
+
+
+
+
+====Patterns & Seeds====
+Drumbeat Preset
+-which beats the bass drum hits on
+-which beats the snares hits on
+-which beats the high hat hits on
+
+Bass line Preset
+-which beats to play the tonic on
+-walking bass? gotta learn how that works
+
+
 TODO:
+
+
+-Fix Metronome
+    -loud ass whistle sound
+    -Also output is broken for chords, I think
+
+
 
 
 - tonic low octave hits on every downbeat(for pattern 1)
