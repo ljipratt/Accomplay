@@ -1,7 +1,7 @@
 Acoompaniment Application
 Libraries: Music21
 
-User iput:
+User input:
 - Root Note(String)
 - Major/Minor
 - BPM(Float/Int)
@@ -16,8 +16,16 @@ Generate:
 General Ideas to be fleshed out:
 
 GUI
--Sheet Music Display
--Keyboard Display
+- Sheet Music Display
+    - White Background
+    - Stalves
+    - Generate number of measures based on user input
+    - A Timeline Scrubber
+- Keyboard Display
+- Chord Input Display
+
+
+
 
 
 
@@ -76,13 +84,27 @@ TODO:
 
 - tonic low octave hits on every downbeat(for pattern 1)
 
-Add more Accompaniment Patterns
--look into inversions if needed
-—accompaniment pattern 1:
-- One octave down from the tonic, one octave up from tonic, hits every note on the chordscale up and down arpeggiated
+===Add more Accompaniment Patterns===
+
+Define Bassline Patterns
+- Walking bass, tonic octave hits, etc
+
+Bassline Pattern 1:
 - Tonic hits a double octave in the baseline on every four beats
 
+------------------------
+Backing Chord Pattern 1:
+- Hits every note on the chordscale up and down arpeggiated
 
+-------------------------
+Backing Chord Pattern 2:
+- Block chords
+
+
+
+
+
+===============================
 
 Make sure the scales can work for diminished, augmented, etc.
 -possibly important to play chord blocks if there is not enough time
